@@ -9,9 +9,9 @@ public class Person extends Npc implements Runnable{
         this.position = startRoom;
     }
     public synchronized void move(){
-        int slump = (int) (Math.random() * 4);
+        int slump = (int) (Math.random() * 4) + 1;
         this.position = slump;
-        System.out.println("Moving " + this.name + " to Room " + (this.position + 1) );
+        System.out.println("Moving " + this.name + " to Room " + (this.position) );
     }
     
     
