@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Inventory {
 
 	private GameObject[] list;
-	public Inventory(int size, Gui g) {
+	public Inventory(int size, Projekt2.Gui g) {
 		list = new GameObject[size];
 	}
 
@@ -18,7 +18,7 @@ public class Inventory {
 		return null;
 	}
 
-	public boolean addObject(GameObject go) {
+	public boolean addObject(Projekt2.GameObject go) {
 		int index = getFirstEmptyIndex();
 		if (index == -1) {
 			System.out.println("Inventory är fullt");
@@ -32,7 +32,7 @@ public class Inventory {
 		return Arrays.toString(this.list);
 	}
 
-	public void removeObject(GameObject gameObject) {
+	public void removeObject(Projekt2.GameObject gameObject) {
 		for (int index = 0; index < list.length; index++) {
 			if (this.list[index] != null && this.list[index].equals(gameObject)) {
 				this.list[index] = null;
@@ -42,7 +42,7 @@ public class Inventory {
 	}
 
 	public boolean contains(String objectName) {
-		for (GameObject g : this.list) {
+		for (Projekt2.GameObject g : this.list) {
 			if (g != null) {
 
 				if (g.getName().equals(objectName)) {
@@ -54,7 +54,16 @@ public class Inventory {
 		return false;
 	}
 
-	private int getFirstEmptyIndex() {
+	public GameObject getFirstObject() {
+        for (int i = 0; i < this.list.length; i++) {
+            if (this.list[i] != null && this.list[i].isMoveable()) {
+                return this.list[i];
+            }
+        }
+        return null;
+    }
+
+	public int getFirstEmptyIndex() {
 
 		for (int i = 0; i < this.list.length; i++) {
 			if (this.list[i] == null) {
