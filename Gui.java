@@ -1,6 +1,5 @@
 package Projekt2;
 
-
 import javax.swing.*;
 import javax.swing.text.JTextComponent;
 
@@ -9,9 +8,6 @@ import java.awt.Color;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 
     public class Gui extends JFrame{
@@ -22,7 +18,6 @@ import java.util.stream.Collectors;
         private JTextField input;
         private JTextArea inventory;
         private String command;
-        private JTextArea showPersons;
         private boolean gotCommand;
         private JButton button;
 		private Object showRoom;
@@ -95,7 +90,7 @@ import java.util.stream.Collectors;
         }
 
         public void setShowInventory(Inventory b) {
-            this.inventory.setText("You are Ola, Theres is 3 NPC´s (S,J,J) Check your console in the background to know there postion"+ "\n" + "Inventory:" + "\n" + b.toString());
+            this.inventory.setText("You are Ola, Theres is 3 NPC´s (S,J,J) Check your console in the background to know there postion"+ "\n" + "Inventory:" + b.toString());
         }
 
         public void setShowPlayer(Person p, Room room, int position) {

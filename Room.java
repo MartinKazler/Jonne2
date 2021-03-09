@@ -1,6 +1,5 @@
 package Projekt2;
 
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Room {
@@ -19,7 +18,7 @@ public class Room {
     }
     public void addNpc(Person person) {
 
-        this.person = Stream.concat(Stream.of(this.person),Stream.of(person)).toArray(Person[]::new); //TODO Fixa fler personer
+        this.person = Stream.concat(Stream.of(this.person),Stream.of(person)).toArray(Person[]::new); 
     }
     public Person[] getPersons(){
         return this.person;

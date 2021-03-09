@@ -1,8 +1,7 @@
 package Projekt2;
 
 public class GameObject {
-    private static int length;
-	private String name;
+    private String name;
     boolean moveable;
 
     public GameObject(String name ,boolean moveable){
@@ -19,13 +18,4 @@ public class GameObject {
 
         return this.name;
     }
-    public static GameObject[] getRandomItems(int total){
-        if(total > GameObject.length)
-            return null;
-
-        // Add some null values
-        GameObject[] nullitems = new GameObject[GameObject.length*2];
-        for(int i = 0; i < GameObject.length; i++){
-            nullitems[i] = GameObjects[i];
-        }
-}}
+}

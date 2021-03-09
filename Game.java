@@ -11,10 +11,7 @@ public class Game {
     private Room map[];
     private Person[] persons;
     public static boolean gameIsOn = true;
-    
-    private static final int totalRooms = 4;
-    public static Room[] rooms = new Room[totalRooms];
-    
+
     public Game(){
         
         room1 = new Room("\nStarting Room"," \nLooks kinda dull, gray walls and just a chair on the right corner and a", gui);
@@ -33,10 +30,10 @@ public class Game {
        
         Container box = new Container("BLUE BOX", false, true, gui);
        
-        room1.addObject(null); room1.addObject(lampa); room1.addObject(box);
-        room2.addObject(null); room2.addObject(smurf); room2.addObject(box);
-        room3.addObject(null); room3.addObject(banana);room3.addObject(box);
-        room4.addObject(null); room4.addObject(ponny); room4.addObject(box);
+         room1.addObject(lampa); room1.addObject(box);
+        room2.addObject(smurf); room2.addObject(box);
+         room3.addObject(banana);room3.addObject(box);
+        room4.addObject(ponny); room4.addObject(box);
 
 
         Person newPlayer1 = new Person("Ola",0, gui);        
@@ -69,7 +66,7 @@ public class Game {
         }
         
         Inventory inventory = newPlayer1.getInventory();
-        
+    
         
         this.gui = new Gui();
 
@@ -131,7 +128,7 @@ public class Game {
                     }
                 
                 } 
-                if (command.contains("drop")  ) {
+                if (command.startsWith("drop")  ) {
 
                     if (command.contains("banana")  ) {
                         map[rumIndex].addObject(banana);
